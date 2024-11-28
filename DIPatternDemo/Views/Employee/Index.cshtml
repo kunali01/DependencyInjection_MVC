@@ -1,0 +1,35 @@
+﻿@model IEnumerable<DIPatternDemo.Models.Employee>
+
+@{
+    ViewData["Title"] = "Employee List";
+}
+
+<h1>Employee List</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Salary</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.Name</td>
+                <td>@employee.Position</td>
+                <td>@employee.Salary</td>
+                <td>
+                    <a href="@Url.Action("Details", "Employee", new { id = employee.Id })">Details</a> |
+                    <a href="@Url.Action("Edit", "Employee", new { id = employee.Id })">Edit</a> |
+                    <a href="@Url.Action("Delete", "Employee", new { id = employee.Id })">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("Create", "Employee")">Create New Employee</a>

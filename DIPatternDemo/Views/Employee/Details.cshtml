@@ -1,0 +1,15 @@
+﻿@model DIPatternDemo.Models.Employee
+
+@{
+    ViewData["Title"] = "Employee Details";
+}
+
+<h2>Employee Details</h2>
+
+<div>
+    <h4>@Model.Name</h4>
+    <p><strong>Position:</strong> @Model.Position</p>
+    <p><strong>Salary:</strong> @Model.Salary</p>
+</div>
+
+<a href="@Url.Action("Index")">Back to List</a>
